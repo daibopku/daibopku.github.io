@@ -222,8 +222,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    .pub-thumbnail img,
-    .pub-thumbnail embed {
+    .pub-thumbnail img {
       width: 100%;
       height: 120px;
       object-fit: cover;
@@ -231,7 +230,13 @@
     }
 
     .pub-thumbnail embed {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
       border: none;
+      overflow: hidden;
     }
 
     /* Publication Info */
