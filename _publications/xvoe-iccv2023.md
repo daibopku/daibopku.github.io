@@ -1,7 +1,7 @@
 ---
 title: "X-VoE: Measuring eXplanatory Violation of Expectation in Physical Events"
 authors: "Bo Dai, Linge Wang, Baoxiong Jia, Song-Chun Zhu, Chi Zhang, Yixin Zhu"
-venue: "ICCV 2023"
+venue: "ICCV Oral 2023"
 date: 2023-08-01
 
 # Links
