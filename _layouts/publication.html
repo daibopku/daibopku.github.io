@@ -190,18 +190,24 @@
       color: var(--text-secondary);
     }
 
-    /* Teaser Image */
+    /* Teaser Image/PDF */
     .pub-teaser {
       margin: 30px 0 40px 0;
       text-align: center;
     }
 
-    .pub-teaser img {
+    .pub-teaser img,
+    .pub-teaser embed {
       width: 100%;
       max-width: 100%;
       height: auto;
       border-radius: 4px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .pub-teaser embed {
+      min-height: 500px;
+      border: 1px solid var(--border-color);
     }
 
     .pub-teaser-caption {
@@ -501,7 +507,12 @@
 
     {% if page.teaser %}
     <div class="pub-teaser">
-      <img src="{{ page.teaser | relative_url }}" alt="{{ page.title }}">
+      {% assign teaser_ext = page.teaser | split: '.' | last | downcase %}
+      {% if teaser_ext == 'pdf' %}
+        <embed src="{{ page.teaser | relative_url }}#toolbar=0&navpanes=0" type="application/pdf" width="100%" height="500px">
+      {% else %}
+        <img src="{{ page.teaser | relative_url }}" alt="{{ page.title }}">
+      {% endif %}
       {% if page.teaser_caption %}
       <div class="pub-teaser-caption">{{ page.teaser_caption }}</div>
       {% endif %}
