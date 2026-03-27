@@ -191,37 +191,53 @@
       padding-left: 0;
     }
 
-    /* Publication Item */
-    .pub-item {
-      margin-bottom: 25px;
+    /* Publication Entry (for list page) */
+    .pub-entry {
+      margin-bottom: 30px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--border-color);
     }
 
-    .pub-title {
+    .pub-entry:last-of-type {
+      border-bottom: none;
+    }
+
+    .pub-entry-title {
+      font-size: 16px;
       font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .pub-entry-title a {
       color: var(--text-primary);
-      margin-bottom: 5px;
+      text-decoration: none;
     }
 
-    .pub-authors {
-      color: var(--text-secondary);
-      font-size: 15px;
-      margin-bottom: 5px;
-    }
-
-    .pub-venue {
-      color: var(--text-light);
-      font-size: 14px;
-      font-style: italic;
-    }
-
-    .pub-links {
-      margin-top: 8px;
-    }
-
-    .pub-links a {
+    .pub-entry-title a:hover {
       color: var(--link-color);
+      text-decoration: underline;
+    }
+
+    .pub-entry-authors {
+      color: var(--text-secondary);
       font-size: 14px;
-      margin-right: 12px;
+      margin-bottom: 4px;
+    }
+
+    .pub-entry-venue {
+      color: var(--text-light);
+      font-size: 13px;
+      font-style: italic;
+      margin-bottom: 8px;
+    }
+
+    .pub-entry-links {
+      font-size: 13px;
+    }
+
+    .pub-entry-links a {
+      color: var(--link-color);
+      margin-right: 10px;
     }
 
     /* Topic Tags */
@@ -327,7 +343,6 @@
       <ul>
         <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
         <li><a href="{{ '/#publications' | relative_url }}">Publications</a></li>
-        <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
       </ul>
     </nav>
 

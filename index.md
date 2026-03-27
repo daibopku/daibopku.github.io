@@ -32,33 +32,42 @@ Dr. Dai is currently a research scientist at the [Institute for Artificial Intel
 
 ---
 
+## Publications
+{:#publications}
+
+<!-- 论文列表 - 按时间倒序排列 -->
+
+{% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
+{% for pub in sorted_pubs %}
+<div class="pub-entry">
+  <div class="pub-entry-title">
+    <a href="{{ pub.url | relative_url }}">{{ pub.title }}</a>
+  </div>
+  <div class="pub-entry-authors">{{ pub.authors }}</div>
+  <div class="pub-entry-venue">{{ pub.venue }}</div>
+  <div class="pub-entry-links">
+    {% if pub.paper %}[<u>Paper</u>]({{ pub.paper }}){% endif %}
+    {% if pub.arxiv %}[<u>arXiv</u>]({{ pub.arxiv }}){% endif %}
+    {% if pub.code %}[<u>Code</u>]({{ pub.code }}){% endif %}
+    {% if pub.project %}[<u>Project</u>]({{ pub.project }}){% endif %}
+    {% if pub.video %}[<u>Video</u>]({{ pub.video }}){% endif %}
+  </div>
+</div>
+{% endfor %}
+
+---
+
 ## Pre-Print
 {:#preprints}
 
 <!-- 在这里添加预印本论文 -->
 
 <!-- 示例：
-**Paper Title: Subtitle**
-Author One, <u>Bo Dai</u>, Author Three, Author Four
-[<u>arXiv</u>](链接) [<u>Project Page</u>](链接) [<u>Code</u>](链接)
-
----
--->
-
----
-
-## Selected Publications
-{:#publications}
-
-<!-- 在这里添加已发表论文 -->
-
-<!-- 示例：
-<div class="pub-item">
-  <div class="pub-title">Tensor force role in β decays analyzed within the Gogny-interaction shell model</div>
-  <div class="pub-authors"><strong>B. Dai</strong>, B. S. Hu, Y. Z. Ma, J. G. Li, S. M. Wang, C. W. Johnson, and F. R. Xu</div>
-  <div class="pub-venue">Physical Review C, 103, 064327 (2021)</div>
-  <div class="pub-links">
-    [<u>PDF</u>](链接) [<u>DOI</u>](https://doi.org/xxx) [<u>Code</u>](链接)
+<div class="pub-entry">
+  <div class="pub-entry-title">Paper Title: Subtitle</div>
+  <div class="pub-entry-authors">Author One, <u>Bo Dai</u>, Author Three</div>
+  <div class="pub-entry-links">
+    [<u>arXiv</u>](链接) [<u>Project Page</u>](链接) [<u>Code</u>](链接)
   </div>
 </div>
 -->
