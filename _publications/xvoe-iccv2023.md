@@ -7,11 +7,10 @@ date: 2023-08-01
 # Links
 pdf: https://arxiv.org/pdf/2308.10441
 arxiv: https://arxiv.org/abs/2308.10441
-code: 
-dataset: 
-project: 
-video: 
-poster: 
+code: https://github.com/daibopku/X-VoE
+dataset: https://huggingface.co/datasets/RuriSama/X-VoE/tree/main
+project: https://sites.google.com/view/x-voe
+video: https://vimeo.com/855745233
 slides: 
 doi: 
 
