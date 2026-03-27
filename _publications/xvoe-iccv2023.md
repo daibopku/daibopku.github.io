@@ -5,7 +5,7 @@ venue: "ICCV 2023"
 date: 2023-08-01
 
 # Links - 添加你的链接到这里
-pdf: https://openaccess.thecvf.com/content/ICCV2023/papers/Dai_X-VoE_a_Comprehensive_Benchmark_Dataset_for_Assessing_AI_Agents_Intuitive_ICCV_2023_paper.pdf
+pdf: https://arxiv.org/pdf/2308.10441
 arxiv: 
 code: 
 dataset: 
