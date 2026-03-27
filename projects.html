@@ -12,10 +12,10 @@ title: Projects
 
 <div class="projects-grid">
   {% for project in site.projects %}
-  <a href="{{ project.url }}" class="project-card">
+  <a href="{{ project.url | relative_url }}" class="project-card">
     <div class="project-card-image">
       {% if project.image %}
-      <img src="{{ project.image }}" alt="{{ project.title }}">
+      <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
       {% else %}
       <div class="project-card-placeholder">
         <i class="fas fa-project-diagram"></i>

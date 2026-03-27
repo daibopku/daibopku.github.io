@@ -370,20 +370,20 @@
   </header>
 
   <main>
-    <a href="/projects/" class="back-link">
+    <a href="{{ '/projects/' | relative_url }}" class="back-link">
       <i class="fas fa-arrow-left"></i> Back to Projects
     </a>
 
     <article class="project-content">
       {% if page.image %}
-      <img src="{{ page.image }}" alt="{{ page.title }}" class="project-image">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="project-image">
       {% endif %}
 
       {{ content }}
 
       <div class="project-author-info">
         {% if site.avatar %}
-        <img src="{{ site.avatar }}" alt="{{ site.author.name }}">
+        <img src="{{ site.avatar | relative_url }}" alt="{{ site.author.name }}">
         {% else %}
         <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700;">
           {{ site.author.name | slice: 0 }}

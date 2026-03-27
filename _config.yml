@@ -1,8 +1,8 @@
 # Site settings
 title: "Bo Dai"
 description: "Postdoc in AI at Peking University, researching Intuitive Physics and Cognitive Science"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site
+baseurl: "/daibo" # the subpath of your site, e.g. /blog (for project pages, use /repo-name)
+url: "https://daibopku.github.io" # the base hostname & protocol for your site
 
 # Author info
 author:
@@ -43,7 +43,7 @@ plugins:
 collections:
   projects:
     output: true
-    permalink: /projects/:name/
+    permalink: /:collection/:name/
 
 # Defaults
 defaults:
@@ -74,6 +74,3 @@ exclude:
   - .github/
   - README.md
   - LICENSE
-
-# GitHub Pages settings (for local development compatibility)
-# Note: When using GitHub Actions, these are handled by the workflow
