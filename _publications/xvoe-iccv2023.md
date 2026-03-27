@@ -1,12 +1,12 @@
 ---
-title: "X-VoE: A Comprehensive Benchmark Dataset for Assessing AI Agents' Intuitive Physics"
-authors: "Bo Dai, Linge Wang, Baoxiong Jia, Zeyu Zhang, Song-Chun Zhu, Chi Zhang"
+title: "X-VoE: Measuring eXplanatory Violation of Expectation in Physical Events"
+authors: "Bo Dai, Linge Wang, Baoxiong Jia, Song-Chun Zhu, Chi Zhang, Yixin Zhu"
 venue: "ICCV 2023"
 date: 2023-08-01
 
-# Links - 添加你的链接到这里
+# Links
 pdf: https://arxiv.org/pdf/2308.10441
-arxiv: 
+arxiv: https://arxiv.org/abs/2308.10441
 code: 
 dataset: 
 project: 
@@ -14,19 +14,18 @@ video:
 poster: 
 slides: 
 doi: 
-bibtex: 
+
+# BibTeX citation (会在弹窗中显示)
+bibtex: |
+  @inproceedings{dai2023xvoe,
+    title={X-VoE: Measuring eXplanatory Violation of Expectation in Physical Events},
+    author={Dai, Bo and Wang, Linge and Jia, Baoxiong and Zhu, Song-Chun and Zhang, Chi and Zhu, Yixin},
+    booktitle={ICCV},
+    year={2023}
+  }
 
 # Teaser image (可选)
 teaser: 
-
-# Related papers (可选)
-# related:
-#   - venue: "ICLR26"
-#     title: "Learning physics-grounded 4D dynamics with neural gaussian force fields"
-#     url: 
-#   - venue: "ICLR26"
-#     title: "Neural Force Field: Few-shot Learning of Generalized Physical Reasoning"
-#     url: 
 ---
 
 ## Abstract
@@ -45,11 +44,13 @@ Experimental outcomes highlight our model's alignment with human commonsense whe
 
 ## Citation
 
+If you find this work useful, please consider citing:
+
 ```bibtex
 @inproceedings{dai2023xvoe,
-  title={X-VoE: A Comprehensive Benchmark Dataset for Assessing AI Agents' Intuitive Physics},
-  author={Dai, Bo and Wang, Linge and Jia, Baoxiong and Zhang, Zeyu and Zhu, Song-Chun and Zhang, Chi},
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  title={X-VoE: Measuring eXplanatory Violation of Expectation in Physical Events},
+  author={Dai, Bo and Wang, Linge and Jia, Baoxiong and Zhu, Song-Chun and Zhang, Chi and Zhu, Yixin},
+  booktitle={ICCV},
   year={2023}
 }
 ```

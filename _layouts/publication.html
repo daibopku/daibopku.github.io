@@ -109,6 +109,7 @@
       font-weight: 500;
       transition: all 0.2s;
       border: 1px solid var(--border-color);
+      cursor: pointer;
     }
 
     .pub-action-btn:hover {
@@ -261,6 +262,133 @@
       font-size: 14px;
     }
 
+    /* BibTeX Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-primary);
+      border-radius: 8px;
+      max-width: 700px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 25px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .modal-header h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 0;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    .modal-body {
+      padding: 25px;
+    }
+
+    .bibtex-code {
+      background: var(--bg-secondary);
+      padding: 20px;
+      border-radius: 4px;
+      font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-primary);
+      white-space: pre-wrap;
+      word-break: break-all;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .modal-btn {
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid var(--border-color);
+    }
+
+    .modal-btn-primary {
+      background: var(--link-color);
+      color: white;
+      border-color: var(--link-color);
+    }
+
+    .modal-btn-primary:hover {
+      background: var(--link-hover);
+    }
+
+    .modal-btn-secondary {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    .modal-btn-secondary:hover {
+      background: var(--btn-hover);
+    }
+
+    .copy-success {
+      color: #28a745;
+      font-size: 14px;
+      margin-left: 10px;
+      display: none;
+    }
+
+    .copy-success.show {
+      display: inline;
+    }
+
     @media (max-width: 600px) {
       .container {
         padding: 20px 15px;
@@ -268,6 +396,11 @@
 
       .pub-actions {
         justify-content: center;
+      }
+
+      .modal-content {
+        width: 95%;
+        max-height: 90vh;
       }
     }
   </style>
@@ -351,9 +484,9 @@
         {% endif %}
         
         {% if page.bibtex %}
-        <a href="{{ page.bibtex }}" target="_blank" class="pub-action-btn">
+        <button class="pub-action-btn" onclick="openBibtexModal()">
           <i class="fas fa-quote-right"></i> Cite
-        </a>
+        </button>
         {% endif %}
       </div>
     </header>
@@ -383,5 +516,63 @@
       <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author.name }}</p>
     </footer>
   </div>
+
+  <!-- BibTeX Modal -->
+  <div id="bibtexModal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>BibTeX Citation</h3>
+        <button class="modal-close" onclick="closeBibtexModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <pre class="bibtex-code" id="bibtexContent">{{ page.bibtex | escape }}</pre>
+        <div class="modal-actions">
+          <span class="copy-success" id="copySuccess">✓ Copied!</span>
+          <button class="modal-btn modal-btn-secondary" onclick="closeBibtexModal()">Close</button>
+          <button class="modal-btn modal-btn-primary" onclick="copyBibtex()">Copy to Clipboard</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openBibtexModal() {
+      document.getElementById('bibtexModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBibtexModal() {
+      document.getElementById('bibtexModal').classList.remove('active');
+      document.body.style.overflow = '';
+      document.getElementById('copySuccess').classList.remove('show');
+    }
+
+    function copyBibtex() {
+      const bibtexText = document.getElementById('bibtexContent').textContent;
+      navigator.clipboard.writeText(bibtexText).then(function() {
+        const successMsg = document.getElementById('copySuccess');
+        successMsg.classList.add('show');
+        setTimeout(function() {
+          successMsg.classList.remove('show');
+        }, 2000);
+      }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+      });
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('bibtexModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeBibtexModal();
+      }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeBibtexModal();
+      }
+    });
+  </script>
 </body>
 </html>
