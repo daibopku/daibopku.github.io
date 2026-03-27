@@ -15,16 +15,11 @@ poster:
 slides: 
 doi: 
 
-# Teaser image/PDF (论文概念图/第一张图)
-# 支持图片格式 (png, jpg, gif) 或 PDF
-teaser: /publications/files/xvoe_explain.pdf
+# Teaser image (论文概念图/第一张图)
+teaser: /publications/files/xvoe_teaser.png
 
-# PDF 尺寸（用于正确显示比例，单位: pts）
-pdf_width: 691
-pdf_height: 456
-
-# 首页列表显示的缩略图（建议 200-300px 宽度）
-thumbnail: /publications/files/xvoe_explain.pdf
+# 首页列表显示的缩略图
+thumbnail: /publications/files/xvoe_teaser.png
 
 # BibTeX citation (保留正确的作者列表，包含 Zhu, Yixin)
 bibtex: |
