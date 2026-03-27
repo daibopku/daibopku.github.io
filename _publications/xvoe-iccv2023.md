@@ -19,6 +19,10 @@ doi:
 # 支持图片格式 (png, jpg, gif) 或 PDF
 teaser: /publications/files/xvoe_explain.pdf
 
+# PDF 尺寸（用于正确显示比例，宽度:高度 = 1:ratio）
+pdf_width: 800
+pdf_height: 600
+
 # 首页列表显示的缩略图（建议 200-300px 宽度）
 thumbnail: /publications/files/xvoe_explain.pdf
 
