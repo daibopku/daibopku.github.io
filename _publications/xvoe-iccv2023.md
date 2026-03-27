@@ -17,12 +17,12 @@ doi:
 
 # Teaser image/PDF (论文概念图/第一张图)
 # 支持图片格式 (png, jpg, gif) 或 PDF
-teaser: files/xvoe_explain.pdf
+teaser: /publications/files/xvoe_explain.pdf
 
 # 首页列表显示的缩略图（建议 200-300px 宽度）
-thumbnail: files/xvoe_explain.pdf
+thumbnail: /publications/files/xvoe_explain.pdf
 
-# BibTeX citation
+# BibTeX citation (保留正确的作者列表，包含 Zhu, Yixin)
 bibtex: |
   @inproceedings{dai2023xvoe,
     title={X-VoE: Measuring eXplanatory Violation of Expectation in Physical Events},
