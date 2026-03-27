@@ -1,295 +1,211 @@
 # Bo Dai's Homepage
 
-[![Deploy GitHub Pages](https://github.com/daibo/daibo.github.io/actions/workflows/pages.yml/badge.svg)](https://github.com/daibo/daibo.github.io/actions/workflows/pages.yml)
+个人学术主页模板，参考 [yzhu.io](https://yzhu.io/) 设计风格。
 
-This is my personal academic homepage powered by [GitHub Pages](https://pages.github.com/) with [GitHub Actions](https://github.com/features/actions) for automated deployment.
+🔗 **Live Site**: https://daibopku.github.io
 
-🔗 **Live Site**: https://daibo.github.io
+## 设计风格
 
-## Features
+- **极简学术风格** - 类似 yzhu.io 的清爽设计
+- **清晰的层次结构** - Biography → Topics → Pre-Print → Publications
+- **响应式布局** - 适配桌面和移动端
+- **易于维护** - 模块化内容，方便逐个添加
 
-- 🚀 **GitHub Actions CI/CD** - Automated build and deployment
-- 📝 **Jekyll Collections** - Easy management of projects with individual pages
-- 🎨 **Modern, responsive design** - Mobile-friendly interface
-- 📱 **Project showcase** - Each project has its own detailed page
-- 🔗 **Social media integration** - GitHub, Twitter, LinkedIn, Google Scholar
-- 📚 **Publications showcase** with DOI links
-- ⚡ **Fast loading** with GitHub Pages CDN
-
-## Project Structure
+## 项目结构
 
 ```
 .
-├── .github/
-│   └── workflows/
-│       └── pages.yml          # GitHub Actions workflow
-├── _config.yml                # Jekyll configuration
+├── _config.yml                # 站点配置（个人信息）
 ├── _layouts/
-│   ├── default.html           # Main layout template
-│   └── project.html           # Project page layout
-├── _projects/                 # Project collection (each file becomes a page)
-│   ├── voe-intuitive-physics.md
-│   ├── physics-simulator.md
-│   └── cognitive-vision.md
-├── _includes/                 # Reusable components (optional)
-├── index.md                   # Homepage
-├── projects.html              # Projects listing page
-├── Gemfile                    # Ruby dependencies
-└── README.md                  # This file
+│   ├── default.html           # 主页布局
+│   └── project.html           # 项目页面布局
+├── _projects/                 # 项目集合
+│   └── (你的项目文件)
+├── _includes/                 # 可复用组件
+├── index.md                   # 主页内容
+├── projects.html              # 项目列表页
+├── Gemfile                    # Ruby 依赖
+└── README.md                  # 使用说明
 ```
 
-## Quick Start
+## 快速开始
 
-### 1. Fork this repository
+### 1. 配置个人信息
 
-Click the "Fork" button at the top right of this repository.
-
-### 2. Enable GitHub Pages with Actions
-
-1. Go to your forked repository → **Settings** → **Pages**
-2. Under "Source", select "GitHub Actions"
-3. The workflow will automatically deploy your site
-
-### 3. Customize your info
-
-Edit `_config.yml`:
+编辑 `_config.yml`：
 
 ```yaml
-title: "Your Name"
-description: "Your description"
+# 基本信息
+title: "Bo Dai"
+description: "Postdoc in AI at Peking University"
+
+# 个人信息
 author:
-  name: "Your Name"
+  name: "Bo Dai"
   email: "your.email@example.com"
-  github: "your-github-username"
-  twitter: "your-twitter-handle"
-  linkedin: "your-linkedin-username"
-  google_scholar: "your-scholar-id"
+  cv: "files/cv.pdf"                    # CV 文件路径（可选）
+  google_scholar: "YOUR_SCHOLAR_ID"     # Google Scholar ID（可选）
+  github: "your-github-username"        # GitHub 用户名（可选）
+  twitter: "your-twitter-handle"        # Twitter 用户名（可选）
 
-# Optional: Add a profile photo
+# 机构信息
+institution: "Beijing Institute for General Artificial Intelligence (BIGAI)"
+institution_url: "https://www.bigai.ai/"
+advisor: "Prof. Song-Chun Zhu"
+advisor_url: "http://www.stat.ucla.edu/~sczhu/"
+
+# 头像（可选，支持外链或本地文件）
 avatar: "https://your-photo-url.jpg"
-
-# Institution info
-institution: "Your Institution"
-institution_url: "https://your-institution.edu"
-advisor: "Your Advisor's Name"
-advisor_url: "https://advisor-website.com"
+# 或本地文件: "images/avatar.jpg"
 ```
 
-### 4. Add your projects
+### 2. 编辑主页内容
 
-Create a new Markdown file in `_projects/` folder:
+编辑 `index.md`，按照以下结构添加内容：
+
+#### Biography 部分
+```markdown
+<section id="biography">
+## Biography
+
+Dr. Bo Dai received a Ph.D. degree ('21) from Peking University advised by [Prof. XXX](链接).
+His/Her research focuses on intuitive physics and cognitive science.
+Dr. Dai works at [BIGAI](https://www.bigai.ai/), working on Violation of Expectation (VoE) projects.
+
+[<u>CV</u>](files/cv.pdf) [<u>Dissertation</u>](files/dissertation.pdf)
+</section>
+```
+
+#### Topics 部分
+```markdown
+<section id="topics">
+## Topics
+
+<div class="topics">
+  <span class="topic-tag">Intuitive Physics</span>
+  <span class="topic-tag">Cognitive Science</span>
+  <span class="topic-tag">Machine Learning</span>
+</div>
+</section>
+```
+
+#### Pre-Print 部分
+```markdown
+<section id="preprints">
+## Pre-Print
+
+**Paper Title: Subtitle**
+Author One, <u>Bo Dai</u>, Author Three
+[<u>arXiv</u>](链接) [<u>Project Page</u>](链接) [<u>Code</u>](链接)
+
+---
+
+**Another Paper Title**
+Authors...
+[<u>arXiv</u>](链接)
+</section>
+```
+
+#### Publications 部分
+```markdown
+<section id="publications">
+## Selected Publications
+
+<div class="pub-item">
+  <div class="pub-title">Tensor force role in β decays analyzed within the Gogny-interaction shell model</div>
+  <div class="pub-authors"><strong>B. Dai</strong>, B. S. Hu, Y. Z. Ma, et al.</div>
+  <div class="pub-venue">Physical Review C, 103, 064327 (2021)</div>
+  <div class="pub-links">
+    [<u>PDF</u>](链接) [<u>DOI</u>](https://doi.org/xxx)
+  </div>
+</div>
+</section>
+```
+
+### 3. 添加项目（可选）
+
+在 `_projects/` 文件夹创建新的 `.md` 文件：
 
 ```markdown
 ---
-title: "Your Project Title"
-description: "Short description of your project"
+title: "项目名称"
+description: "项目简短描述"
 date: 2024-01-15
-tags: ["Tag1", "Tag2", "Tag3"]
-github: https://github.com/yourusername/project-name
-demo: https://your-demo-url.com (optional)
-paper: https://arxiv.org/abs/xxxx.xxxxx (optional)
-image: https://your-image-url.jpg (optional)
+tags: ["标签1", "标签2"]
+github: https://github.com/username/repo
+paper: https://arxiv.org/abs/xxx
+demo: https://demo-link.com
 ---
 
 ## Overview
 
-Your project description here...
+项目详细介绍...
 
 ## Features
 
-- Feature 1
-- Feature 2
-- Feature 3
-
-## Installation
-
-```bash
-pip install your-project
-```
-
-## Usage
-
-```python
-import your_project
-# Your code example
-```
+- 特性1
+- 特性2
 
 ## Citation
 
 ```bibtex
-@article{yourname2024,
-  title={Your Paper Title},
-  author={Your Name},
-  journal={arXiv preprint},
-  year={2024}
-}
+@article{xxx}
 ```
 ```
 
-The front matter (between `---`) is required and contains metadata. The content below supports full Markdown syntax including:
-- Headers
-- Lists
-- Code blocks with syntax highlighting
-- Tables
-- Images
-- Math equations (using LaTeX syntax)
+### 4. 上传 CV 文件（可选）
 
-### 5. Update publications
+1. 创建 `files/` 文件夹
+2. 上传你的 CV PDF 文件
+3. 在 `_config.yml` 中设置 `cv: "files/cv.pdf"`
 
-Edit `index.md` to update your publications list.
-
-### 6. Push changes
+### 5. 推送更新
 
 ```bash
 git add .
-git commit -m "Update site content"
+git commit -m "Update homepage content"
 git push origin main
 ```
 
-GitHub Actions will automatically build and deploy your site!
+GitHub Actions 会自动构建并部署。
 
-## Local Development
+## 内容编辑技巧
 
-### Prerequisites
+### 链接格式
+- 普通链接：`[文本](URL)`
+- 下划线链接：`[<u>文本</u>](URL)` - 类似 [CV] 样式
+- 方括号链接：会自动添加 []，如 `[<u>PDF</u>](链接)` 显示为 [<u>PDF</u>]
 
-- Ruby 3.0+ 
-- Bundler
+### 作者名高亮
+- 使用 `<strong>Your Name</strong>` 或 `<u>Your Name</u>` 高亮你的名字
 
-### Setup
+### 添加图片
+```markdown
+![描述](图片URL)
+```
+
+### 添加本地文件
+1. 将文件放入 `files/` 或 `images/` 文件夹
+2. 引用方式：`[CV](files/cv.pdf)` 或 `![头像](images/avatar.jpg)`
+
+## 本地预览
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/yourusername.github.io.git
-cd yourusername.github.io
-
-# Install dependencies
+# 安装依赖
 bundle install
 
-# Serve locally
-bundle exec jekyll serve --watch
-
-# Open http://localhost:4000
-```
-
-### With Docker
-
-```bash
-docker run --rm -it \
-  --volume="$PWD:/srv/jekyll" \
-  --publish 4000:4000 \
-  jekyll/jekyll:latest \
-  jekyll serve --watch --drafts
-```
-
-## Adding New Projects
-
-### Method 1: Create a new file
-
-1. Create a new `.md` file in `_projects/` folder
-2. Add front matter and content
-3. Commit and push
-
-### Method 2: Use GitHub web interface
-
-1. Go to `_projects/` folder in your repository
-2. Click "Add file" → "Create new file"
-3. Name it `your-project-name.md`
-4. Add content using the template above
-5. Commit directly to main branch
-
-The project will automatically appear on your projects page!
-
-## Customization
-
-### Colors
-
-Edit CSS variables in `_layouts/default.html`:
-
-```css
-:root {
-  --primary-color: #2563eb;    /* Main accent color */
-  --text-primary: #1f2937;     /* Primary text */
-  --text-secondary: #6b7280;   /* Secondary text */
-  --bg-primary: #ffffff;       /* Primary background */
-  --bg-secondary: #f9fafb;     /* Secondary background */
-}
-```
-
-### Fonts
-
-The template uses [Inter](https://fonts.google.com/specimen/Inter) from Google Fonts. To change:
-
-1. Update the Google Fonts link in `_layouts/default.html` and `_layouts/project.html`
-2. Update the `font-family` CSS property
-
-### Adding new sections
-
-You can add new sections to `_config.yml` by creating new collections:
-
-```yaml
-collections:
-  projects:
-    output: true
-    permalink: /projects/:name/
-  tutorials:  # New collection
-    output: true
-    permalink: /tutorials/:name/
-```
-
-Then create `_tutorials/` folder and add tutorial files.
-
-## Troubleshooting
-
-### Build fails on GitHub Actions
-
-Check the Actions tab for error messages. Common issues:
-- Invalid YAML in front matter
-- Missing required fields in `_config.yml`
-- Syntax errors in HTML/CSS
-
-### Changes not appearing
-
-1. Check that the workflow completed successfully (Actions tab)
-2. Clear browser cache
-3. Wait 2-3 minutes for CDN propagation
-
-### Local build fails
-
-```bash
-# Clean and rebuild
-bundle exec jekyll clean
+# 本地启动
 bundle exec jekyll serve
+
+# 访问 http://localhost:4000
 ```
 
-## Advanced Features
+## 参考网站
 
-### SEO
+- [yzhu.io](https://yzhu.io/) - 设计参考
+- [GitHub Pages](https://pages.github.com/) - 托管服务
+- [Jekyll](https://jekyllrb.com/) - 静态网站生成器
 
-The site uses `jekyll-seo-tag` plugin for automatic SEO optimization:
-- Meta tags
-- Open Graph tags
-- Twitter Cards
-- JSON-LD structured data
+## 许可证
 
-### Sitemap
-
-Automatic sitemap generation at `/sitemap.xml` for better search engine indexing.
-
-### RSS Feed
-
-Automatic RSS feed at `/feed.xml` for blog posts (if you add a blog).
-
-## Contributing
-
-Feel free to fork this template for your own use. If you find bugs or have suggestions, please open an issue.
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- Built with [Jekyll](https://jekyllrb.com/)
-- Deployed with [GitHub Actions](https://github.com/features/actions)
-- Icons by [Font Awesome](https://fontawesome.com/)
-- Fonts by [Google Fonts](https://fonts.google.com/)
+MIT License

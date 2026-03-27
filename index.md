@@ -1,68 +1,94 @@
 ---
 layout: default
-title: Bo Dai - Postdoc in AI at Peking University
+title: Bo Dai
 ---
 
-<section id="about">
-## <i class="fas fa-user"></i> About Me
+<section id="biography">
+## Biography
 
-I am a postdoc majored in AI at Peking University. Currently, I work at [Beijing Institute for General Artificial Intelligence](https://www.bigai.ai/), advised by [Prof. Song-Chun Zhu](http://www.stat.ucla.edu/~sczhu/). Before coming to BIGAI, I graduated with a Ph.D. in Physics from Peking University.
+<!-- 请在这里添加你的简介 -->
+<!-- 示例格式：
+Dr. Bo Dai received a Ph.D. degree ('21) from Peking University advised by [Prof. XXX](链接).
+His/Her research focuses on XXX.
+Dr. Dai works at [Institution Name](链接), working on XXX.
+
+[<u>CV</u>](链接) [<u>Dissertation</u>](链接)
+-->
+
+<!-- 示例（来自yzhu.io）：
+Dr. Yixin Zhu received a Ph.D. degree ('18) from UCLA advised by Prof. Song-Chun Zhu.
+His research builds interactive AI by integrating high-level common sense (functionality, affordance, physics, causality, intent) with raw sensory inputs (pixels and haptic signals) to enable richer representation and cognitive reasoning on objects, scenes, shapes, numbers, and agents.
+Dr. Zhu directs the PKU CoRe Lab, working on abstract reasoning, visually grounded reasoning, and interactive reasoning.
+
+[<u>CV</u>](files/cv.pdf) [<u>Dissertation</u>](files/dissertation.pdf)
+-->
+
+<p style="color: #999; font-style: italic;">（请编辑 index.md 添加你的个人简介）</p>
+
 </section>
 
-<section id="research">
-## <i class="fas fa-flask"></i> Research
+<section id="topics">
+## Topics
 
-My research interests lie on Intuitive Theory in Cognitive Science. Currently, I work with [Yixin Zhu](https://www.yzhu.io/) on Violation of Expectation (VoE) projects for intuitive physics.
+<!-- 请在这里添加你的研究方向/主题 -->
+<!-- 使用 topic-tag 格式 -->
 
-Intuitive physics is not really physics, but refers to the initial and fundamental human cognition of the world. I focus on how to build a machine to learn intuitive physical knowledge with human-like performance. This research not only helps to build a machine that thinks like a people, but also helps us to learn more about possible human cognitive simulations.
-
-### Research Interests
-
-<div class="research-tags">
-<span class="research-tag">Intuitive Physics</span>
-<span class="research-tag">Cognitive Science</span>
-<span class="research-tag">Artificial Intelligence</span>
-<span class="research-tag">Machine Learning</span>
-<span class="research-tag">Violation of Expectation (VoE)</span>
+<div class="topics">
+  <!-- 示例：
+  <span class="topic-tag">Intuitive Physics</span>
+  <span class="topic-tag">Cognitive Science</span>
+  <span class="topic-tag">Machine Learning</span>
+  -->
 </div>
+
+<p style="color: #999; font-style: italic; margin-top: 15px;">（请编辑 index.md 添加研究主题）</p>
+
+</section>
+
+<section id="preprints">
+## Pre-Print
+
+<!-- 请在这里添加预印本论文 -->
+<!-- 格式：标题 + 作者 + 链接 -->
+
+<!-- 示例：
+**Paper Title: Subtitle**
+Author One, <u>Bo Dai</u>, Author Three, Author Four
+[<u>arXiv</u>](链接) [<u>Project Page</u>](链接) [<u>Code</u>](链接)
+
+---
+-->
+
+<p style="color: #999; font-style: italic;">（请编辑 index.md 添加预印本论文）</p>
+
 </section>
 
 <section id="publications">
-## <i class="fas fa-book"></i> Publications
+## Selected Publications
 
-<div class="publication">
-<div class="publication-title">Tensor force role in β decays analyzed within the Gogny-interaction shell model</div>
-<div class="publication-authors"><strong>B. Dai</strong>, B. S. Hu, Y. Z. Ma, J. G. Li, S. M. Wang, C. W. Johnson, and F. R. Xu</div>
-<div class="publication-venue">Physical Review C, 103, 064327 (2021)</div>
-<div class="publication-links">
-<a href="https://doi.org/10.1103/PhysRevC.103.064327" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
-</div>
-</div>
+<!-- 请在这里添加已发表论文 -->
+<!-- 使用 pub-item 格式 -->
 
-<div class="publication">
-<div class="publication-title">Population dynamics of molecular nitrogen initiated by intense femtosecond laser pulses</div>
-<div class="publication-authors">Peng Wang, Chengyin Wu, Mingwei Lei, <strong>Bo Dai</strong>, Hong Yang, Hongbing Jiang, and Qihuang Gong</div>
-<div class="publication-venue">Physical Review A, 92, 063412 (2015)</div>
-<div class="publication-links">
-<a href="https://doi.org/10.1103/PhysRevA.92.063412" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
-</div>
+<!-- 示例：
+<div class="pub-item">
+  <div class="pub-title">Tensor force role in β decays analyzed within the Gogny-interaction shell model</div>
+  <div class="pub-authors"><strong>B. Dai</strong>, B. S. Hu, Y. Z. Ma, J. G. Li, S. M. Wang, C. W. Johnson, and F. R. Xu</div>
+  <div class="pub-venue">Physical Review C, 103, 064327 (2021)</div>
+  <div class="pub-links">
+    [<u>PDF</u>](链接) [<u>DOI</u>](https://doi.org/xxx) [<u>Code</u>](链接)
+  </div>
 </div>
 
-<div class="publication">
-<div class="publication-title">Effects of three-nucleon force on the low-lying states of 28F and 29Ne within ab initio calculations</div>
-<div class="publication-authors">Bo Dai, Jianguo Li, Shuang Zhang, Simin Wang, Furong Xu</div>
-<div class="publication-venue">Chinese Science Bulletin, 66, 3866-3872 (2021)</div>
-<div class="publication-links">
-<a href="https://doi.org/10.1360/TB-2021-0317" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
+<div class="pub-item">
+  <div class="pub-title">Population dynamics of molecular nitrogen initiated by intense femtosecond laser pulses</div>
+  <div class="pub-authors">Peng Wang, Chengyin Wu, Mingwei Lei, <strong>Bo Dai</strong>, Hong Yang, Hongbing Jiang, and Qihuang Gong</div>
+  <div class="pub-venue">Physical Review A, 92, 063412 (2015)</div>
+  <div class="pub-links">
+    [<u>DOI</u>](https://doi.org/xxx)
+  </div>
 </div>
-</div>
+-->
 
-<div class="publication">
-<div class="publication-title">The descriptions of rotational bands in 10Be and 12Be with shell-model calculations</div>
-<div class="publication-authors">Bo Dai, Jianguo Li, Furong Xu</div>
-<div class="publication-venue">Chinese Science Bulletin, 66, 3712-3718 (2021)</div>
-<div class="publication-links">
-<a href="https://doi.org/10.1360/TB-2021-0239" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
-</div>
-</div>
+<p style="color: #999; font-style: italic;">（请编辑 index.md 添加已发表论文）</p>
+
 </section>

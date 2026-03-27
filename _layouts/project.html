@@ -7,24 +7,18 @@
   <meta name="description" content="{{ page.description | default: site.description }}">
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --primary-color: #2563eb;
-      --primary-dark: #1d4ed8;
-      --primary-light: #dbeafe;
-      --text-primary: #1f2937;
-      --text-secondary: #6b7280;
-      --bg-primary: #ffffff;
-      --bg-secondary: #f9fafb;
-      --bg-tertiary: #f3f4f6;
-      --border-color: #e5e7eb;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --text-primary: #333;
+      --text-secondary: #666;
+      --text-light: #999;
+      --link-color: #0066cc;
+      --link-hover: #0052a3;
+      --border-color: #e0e0e0;
+      --bg-primary: #fff;
+      --bg-secondary: #f8f9fa;
     }
 
     * {
@@ -34,205 +28,141 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
       line-height: 1.7;
       color: var(--text-primary);
-      background-color: var(--bg-secondary);
+      background-color: var(--bg-primary);
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Navigation */
-    nav {
-      background: var(--bg-primary);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-container {
-      max-width: 1200px;
+    .container {
+      max-width: 800px;
       margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 40px 20px;
     }
 
-    .nav-brand {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    .nav-links a {
+    /* Back Link */
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
       color: var(--text-secondary);
       text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
+      font-size: 14px;
     }
 
-    .nav-links a:hover {
-      color: var(--primary-color);
+    .back-link:hover {
+      color: var(--link-color);
     }
 
     /* Project Header */
     .project-header {
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .project-header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 15px;
     }
 
-    .project-header .project-description {
-      font-size: 1.125rem;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto;
+    .project-header p {
+      color: var(--text-secondary);
+      font-size: 17px;
+      margin-bottom: 20px;
     }
 
     .project-tags {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-top: 1.5rem;
+      gap: 8px;
+      margin-bottom: 20px;
     }
 
     .project-tag {
-      background: rgba(255, 255, 255, 0.2);
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border-radius: 20px;
-      font-size: 0.875rem;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      padding: 4px 12px;
+      border-radius: 3px;
+      font-size: 13px;
+      border: 1px solid var(--border-color);
     }
 
-    /* Project Links */
     .project-links {
       display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 2rem;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      background: white;
-      color: var(--primary-color);
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: all 0.2s;
+      color: var(--link-color);
+      font-size: 14px;
     }
 
-    .project-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    .project-link:before {
+      content: "[";
     }
 
-    .project-link.secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid rgba(255, 255, 255, 0.5);
+    .project-link:after {
+      content: "]";
     }
 
-    .project-link.secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: white;
-    }
-
-    /* Main Content */
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-
-    .project-content {
-      background: var(--bg-primary);
-      border-radius: 12px;
-      padding: 3rem;
-      box-shadow: var(--shadow);
-    }
-
+    /* Project Content */
     .project-content h2 {
-      font-size: 1.75rem;
+      font-size: 20px;
       font-weight: 600;
-      margin: 2rem 0 1rem;
-      color: var(--text-primary);
-    }
-
-    .project-content h2:first-child {
-      margin-top: 0;
+      margin: 35px 0 15px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .project-content h3 {
-      font-size: 1.25rem;
+      font-size: 17px;
       font-weight: 600;
-      margin: 1.5rem 0 0.75rem;
-      color: var(--text-primary);
+      margin: 25px 0 12px;
     }
 
     .project-content p {
-      margin-bottom: 1rem;
-      color: var(--text-primary);
-    }
-
-    .project-content a {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-
-    .project-content a:hover {
-      text-decoration: underline;
+      margin-bottom: 15px;
+      text-align: justify;
     }
 
     .project-content ul, .project-content ol {
-      margin-bottom: 1rem;
-      padding-left: 1.5rem;
+      margin-bottom: 15px;
+      padding-left: 25px;
     }
 
     .project-content li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 8px;
     }
 
-    .project-content blockquote {
-      border-left: 4px solid var(--primary-color);
-      padding-left: 1rem;
-      margin: 1.5rem 0;
-      color: var(--text-secondary);
-      font-style: italic;
+    .project-content a {
+      color: var(--link-color);
+    }
+
+    .project-content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin: 20px 0;
     }
 
     .project-content code {
-      background: var(--bg-tertiary);
-      padding: 0.2rem 0.4rem;
-      border-radius: 4px;
+      background: var(--bg-secondary);
+      padding: 2px 6px;
+      border-radius: 3px;
       font-family: 'Monaco', 'Menlo', monospace;
-      font-size: 0.9em;
+      font-size: 14px;
     }
 
     .project-content pre {
-      background: var(--bg-tertiary);
-      padding: 1rem;
-      border-radius: 8px;
+      background: var(--bg-secondary);
+      padding: 15px;
+      border-radius: 4px;
       overflow-x: auto;
-      margin: 1rem 0;
+      margin: 15px 0;
     }
 
     .project-content pre code {
@@ -240,165 +170,98 @@
       padding: 0;
     }
 
-    /* Project Image */
-    .project-image {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 2rem;
-    }
-
-    /* Author Info */
-    .project-author-info {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.5rem;
-      background: var(--bg-secondary);
-      border-radius: 8px;
-      margin-top: 2rem;
-    }
-
-    .project-author-info img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .project-author-info .author-details h4 {
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .project-author-info .author-details p {
-      font-size: 0.875rem;
+    .project-content blockquote {
+      border-left: 3px solid var(--border-color);
+      padding-left: 15px;
+      margin: 15px 0;
       color: var(--text-secondary);
-      margin: 0;
     }
 
-    /* Back Link */
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+    /* Navigation */
+    nav {
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
       color: var(--text-secondary);
       text-decoration: none;
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-      transition: color 0.2s;
+      font-size: 14px;
     }
 
-    .back-link:hover {
-      color: var(--primary-color);
+    nav a:hover {
+      color: var(--text-primary);
     }
 
     /* Footer */
     footer {
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border-color);
       text-align: center;
-      padding: 2rem;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
+      color: var(--text-light);
+      font-size: 14px;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-
-      .project-header h1 {
-        font-size: 1.75rem;
-      }
-
-      .project-content {
-        padding: 1.5rem;
-      }
-
-      .project-links {
-        flex-direction: column;
-        align-items: center;
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px 15px;
       }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <a href="/" class="nav-brand">{{ site.title }}</a>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/#research">Research</a></li>
-        <li><a href="/projects/">Projects</a></li>
-        <li><a href="/#publications">Publications</a></li>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="{{ '/' | relative_url }}">← Home</a></li>
+        <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
 
-  <header class="project-header">
-    <h1>{{ page.title }}</h1>
-    {% if page.description %}
-    <p class="project-description">{{ page.description }}</p>
-    {% endif %}
-    
-    {% if page.tags %}
-    <div class="project-tags">
-      {% for tag in page.tags %}
-      <span class="project-tag">{{ tag }}</span>
-      {% endfor %}
-    </div>
-    {% endif %}
+    <a href="{{ '/projects/' | relative_url }}" class="back-link">← Back to Projects</a>
 
-    <div class="project-links">
-      {% if page.github %}
-      <a href="{{ page.github }}" target="_blank" class="project-link">
-        <i class="fab fa-github"></i> View on GitHub
-      </a>
+    <header class="project-header">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+      <p>{{ page.description }}</p>
       {% endif %}
-      {% if page.demo %}
-      <a href="{{ page.demo }}" target="_blank" class="project-link secondary">
-        <i class="fas fa-external-link-alt"></i> Live Demo
-      </a>
+      
+      {% if page.tags %}
+      <div class="project-tags">
+        {% for tag in page.tags %}
+        <span class="project-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
       {% endif %}
-      {% if page.paper %}
-      <a href="{{ page.paper }}" target="_blank" class="project-link secondary">
-        <i class="fas fa-file-pdf"></i> Paper
-      </a>
-      {% endif %}
-    </div>
-  </header>
 
-  <main>
-    <a href="{{ '/projects/' | relative_url }}" class="back-link">
-      <i class="fas fa-arrow-left"></i> Back to Projects
-    </a>
+      <div class="project-links">
+        {% if page.github %}
+        <a href="{{ page.github }}" target="_blank" class="project-link">Code</a>
+        {% endif %}
+        {% if page.paper %}
+        <a href="{{ page.paper }}" target="_blank" class="project-link">Paper</a>
+        {% endif %}
+        {% if page.demo %}
+        <a href="{{ page.demo }}" target="_blank" class="project-link">Demo</a>
+        {% endif %}
+      </div>
+    </header>
 
     <article class="project-content">
-      {% if page.image %}
-      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="project-image">
-      {% endif %}
-
       {{ content }}
-
-      <div class="project-author-info">
-        {% if site.avatar %}
-        <img src="{{ site.avatar | relative_url }}" alt="{{ site.author.name }}">
-        {% else %}
-        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 700;">
-          {{ site.author.name | slice: 0 }}
-        </div>
-        {% endif %}
-        <div class="author-details">
-          <h4>{{ site.author.name }}</h4>
-          <p>{{ site.description }}</p>
-        </div>
-      </div>
     </article>
-  </main>
 
-  <footer>
-    <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author.name }}. All rights reserved.</p>
-  </footer>
+    <footer>
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author.name }}</p>
+    </footer>
+  </div>
 </body>
 </html>
