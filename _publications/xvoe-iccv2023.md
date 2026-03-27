@@ -3,12 +3,30 @@ title: "X-VoE: A Comprehensive Benchmark Dataset for Assessing AI Agents' Intuit
 authors: "Bo Dai, Linge Wang, Baoxiong Jia, Zeyu Zhang, Song-Chun Zhu, Chi Zhang"
 venue: "ICCV 2023"
 date: 2023-08-01
-paper: https://openaccess.thecvf.com/content/ICCV2023/html/Dai_X-VoE_a_Comprehensive_Benchmark_Dataset_for_Assessing_AI_Agents_Intuitive_ICCV_2023_paper.html
+
+# Links - 添加你的链接到这里
+pdf: https://openaccess.thecvf.com/content/ICCV2023/papers/Dai_X-VoE_a_Comprehensive_Benchmark_Dataset_for_Assessing_AI_Agents_Intuitive_ICCV_2023_paper.pdf
 arxiv: 
 code: 
+dataset: 
 project: 
 video: 
-tags: ["Intuitive Physics", "VoE", "Benchmark", "ICCV 2023"]
+poster: 
+slides: 
+doi: 
+bibtex: 
+
+# Teaser image (可选)
+teaser: 
+
+# Related papers (可选)
+# related:
+#   - venue: "ICLR26"
+#     title: "Learning physics-grounded 4D dynamics with neural gaussian force fields"
+#     url: 
+#   - venue: "ICLR26"
+#     title: "Neural Force Field: Few-shot Learning of Generalized Physical Reasoning"
+#     url: 
 ---
 
 ## Abstract
@@ -24,10 +42,6 @@ Beyond model evaluation, we present an **explanation-based learning system** tha
 ## Results
 
 Experimental outcomes highlight our model's alignment with human commonsense when tested against X-VoE. A remarkable feature is our model's ability to **visually expound VoE events by reconstructing concealed scenes**.
-
-## Conclusion
-
-Through X-VoE, we catalyze the advancement of AI endowed with human-like intuitive physics capabilities.
 
 ## Citation
 

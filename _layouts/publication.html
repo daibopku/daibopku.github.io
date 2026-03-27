@@ -9,6 +9,9 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
   
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
     :root {
       --text-primary: #333;
@@ -19,6 +22,8 @@
       --border-color: #e0e0e0;
       --bg-primary: #fff;
       --bg-secondary: #f8f9fa;
+      --btn-bg: #f0f0f0;
+      --btn-hover: #e0e0e0;
     }
 
     * {
@@ -37,7 +42,7 @@
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 40px 20px;
     }
@@ -63,7 +68,7 @@
     }
 
     .pub-header h1 {
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 600;
       margin-bottom: 15px;
       line-height: 1.4;
@@ -83,29 +88,37 @@
       font-style: italic;
     }
 
-    .pub-links {
+    /* Action Buttons */
+    .pub-actions {
       display: flex;
-      gap: 15px;
       flex-wrap: wrap;
-      margin-top: 20px;
+      gap: 10px;
+      margin-top: 25px;
     }
 
-    .pub-link {
-      color: var(--link-color);
+    .pub-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--btn-bg);
+      color: var(--text-primary);
+      text-decoration: none;
+      border-radius: 4px;
       font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s;
+      border: 1px solid var(--border-color);
+    }
+
+    .pub-action-btn:hover {
+      background: var(--btn-hover);
       text-decoration: none;
     }
 
-    .pub-link:hover {
-      text-decoration: underline;
-    }
-
-    .pub-link:before {
-      content: "[";
-    }
-
-    .pub-link:after {
-      content: "]";
+    .pub-action-btn i {
+      font-size: 13px;
+      color: var(--text-secondary);
     }
 
     /* Publication Content */
@@ -176,6 +189,45 @@
       color: var(--text-secondary);
     }
 
+    /* Teaser Image */
+    .pub-teaser {
+      margin: 30px 0;
+    }
+
+    .pub-teaser img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Related Papers */
+    .related-papers {
+      margin-top: 30px;
+    }
+
+    .related-papers h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--text-secondary);
+    }
+
+    .related-papers ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .related-papers li {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .related-papers a {
+      color: var(--text-primary);
+    }
+
     /* Navigation */
     nav {
       margin-bottom: 30px;
@@ -213,6 +265,10 @@
       .container {
         padding: 20px 15px;
       }
+
+      .pub-actions {
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -238,28 +294,90 @@
         {% endif %}
       </div>
 
-      <div class="pub-links">
-        {% if page.paper %}
-        <a href="{{ page.paper }}" target="_blank" class="pub-link">Paper</a>
+      <!-- Action Buttons -->
+      <div class="pub-actions">
+        {% if page.pdf %}
+        <a href="{{ page.pdf }}" target="_blank" class="pub-action-btn">
+          <i class="fas fa-file-pdf"></i> PDF
+        </a>
         {% endif %}
+        
         {% if page.arxiv %}
-        <a href="{{ page.arxiv }}" target="_blank" class="pub-link">arXiv</a>
+        <a href="{{ page.arxiv }}" target="_blank" class="pub-action-btn">
+          <i class="fas fa-book"></i> arXiv
+        </a>
         {% endif %}
+        
         {% if page.code %}
-        <a href="{{ page.code }}" target="_blank" class="pub-link">Code</a>
+        <a href="{{ page.code }}" target="_blank" class="pub-action-btn">
+          <i class="fab fa-github"></i> Code
+        </a>
         {% endif %}
+        
+        {% if page.dataset %}
+        <a href="{{ page.dataset }}" target="_blank" class="pub-action-btn">
+          <i class="fas fa-database"></i> Dataset
+        </a>
+        {% endif %}
+        
         {% if page.project %}
-        <a href="{{ page.project }}" target="_blank" class="pub-link">Project</a>
+        <a href="{{ page.project }}" target="_blank" class="pub-action-btn">
+          <i class="fas fa-globe"></i> Project
+        </a>
         {% endif %}
+        
         {% if page.video %}
-        <a href="{{ page.video }}" target="_blank" class="pub-link">Video</a>
+        <a href="{{ page.video }}" target="_blank" class="pub-action-btn">
+          <i class="fas fa-video"></i> Video
+        </a>
+        {% endif %}
+        
+        {% if page.poster %}
+        <a href="{{ page.poster }}" target="_blank" class="pub-action-btn">
+          <i class="fas fa-image"></i> Poster
+        </a>
+        {% endif %}
+        
+        {% if page.slides %}
+        <a href="{{ page.slides }}" target="_blank" class="pub-action-btn">
+          <i class="fas fa-file-powerpoint"></i> Slides
+        </a>
+        {% endif %}
+        
+        {% if page.doi %}
+        <a href="{{ page.doi }}" target="_blank" class="pub-action-btn">
+          <i class="fas fa-link"></i> DOI
+        </a>
+        {% endif %}
+        
+        {% if page.bibtex %}
+        <a href="{{ page.bibtex }}" target="_blank" class="pub-action-btn">
+          <i class="fas fa-quote-right"></i> Cite
+        </a>
         {% endif %}
       </div>
     </header>
 
+    {% if page.teaser %}
+    <div class="pub-teaser">
+      <img src="{{ page.teaser | relative_url }}" alt="{{ page.title }}">
+    </div>
+    {% endif %}
+
     <article class="pub-content">
       {{ content }}
     </article>
+
+    {% if page.related %}
+    <div class="related-papers">
+      <h3>Related Publications</h3>
+      <ul>
+        {% for item in page.related %}
+        <li>[{{ item.venue }}] <a href="{{ item.url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
 
     <footer>
       <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author.name }}</p>

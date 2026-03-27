@@ -46,11 +46,15 @@ Dr. Dai is currently a research scientist at the [Institute for Artificial Intel
   <div class="pub-entry-authors">{{ pub.authors }}</div>
   <div class="pub-entry-venue">{{ pub.venue }}</div>
   <div class="pub-entry-links">
-    {% if pub.paper %}[<u>Paper</u>]({{ pub.paper }}){% endif %}
+    {% if pub.pdf %}[<u>PDF</u>]({{ pub.pdf }}){% endif %}
     {% if pub.arxiv %}[<u>arXiv</u>]({{ pub.arxiv }}){% endif %}
     {% if pub.code %}[<u>Code</u>]({{ pub.code }}){% endif %}
+    {% if pub.dataset %}[<u>Dataset</u>]({{ pub.dataset }}){% endif %}
     {% if pub.project %}[<u>Project</u>]({{ pub.project }}){% endif %}
     {% if pub.video %}[<u>Video</u>]({{ pub.video }}){% endif %}
+    {% if pub.poster %}[<u>Poster</u>]({{ pub.poster }}){% endif %}
+    {% if pub.slides %}[<u>Slides</u>]({{ pub.slides }}){% endif %}
+    {% if pub.doi %}[<u>DOI</u>]({{ pub.doi }}){% endif %}
   </div>
 </div>
 {% endfor %}
@@ -67,7 +71,7 @@ Dr. Dai is currently a research scientist at the [Institute for Artificial Intel
   <div class="pub-entry-title">Paper Title: Subtitle</div>
   <div class="pub-entry-authors">Author One, <u>Bo Dai</u>, Author Three</div>
   <div class="pub-entry-links">
-    [<u>arXiv</u>](链接) [<u>Project Page</u>](链接) [<u>Code</u>](链接)
+    [<u>PDF</u>](链接) [<u>arXiv</u>](链接) [<u>Code</u>](链接) [<u>Dataset</u>](链接)
   </div>
 </div>
 -->
