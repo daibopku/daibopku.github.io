@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-dark: #1d4ed8;
+      --text-primary: #1f2937;
+      --text-secondary: #6b7280;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f9fafb;
+      --border-color: #e5e7eb;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background-color: var(--bg-secondary);
+    }
+
+    /* Navigation */
+    nav {
+      background: var(--bg-primary);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--bg-primary);
+      box-shadow: var(--shadow-lg);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .hero .tagline {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero .institution {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .hero .institution a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: var(--shadow);
+    }
+
+    .social-links a:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Main Content */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    section {
+      background: var(--bg-primary);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+    }
+
+    /* Projects Preview */
+    .projects-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .project-preview-card {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .project-preview-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--primary-color);
+    }
+
+    .project-preview-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: white;
+      font-size: 1.5rem;
+      overflow: hidden;
+    }
+
+    .project-preview-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-preview-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .project-preview-card p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .project-preview-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+    }
+
+    .project-preview-tags span {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 0.2rem 0.5rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .view-all-projects {
+      text-align: center;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.5rem;
+      background: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    section h2 i {
+      color: var(--primary-color);
+    }
+
+    section p {
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    section a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    section a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+
+    /* Publications */
+    .publication {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .publication:last-child {
+      border-bottom: none;
+    }
+
+    .publication-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .publication-authors {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .publication-venue {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+
+    .publication-links {
+      margin-top: 0.5rem;
+    }
+
+    .publication-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+      margin-right: 1rem;
+      padding: 0.25rem 0.75rem;
+      background: var(--bg-secondary);
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .publication-links a:hover {
+      background: var(--border-color);
+      text-decoration: none;
+    }
+
+    /* Research Interests */
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .research-tag {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid var(--border-color);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <a href="/" class="nav-brand">{{ site.title }}</a>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/">#Publications</a></li>
+        <li><a href="/">#About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-container">
+      {% if site.avatar %}
+      <img src="{{ site.avatar }}" alt="{{ site.author.name }}" class="avatar">
+      {% else %}
+      <div class="avatar" style="background: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: 700;">
+        {{ site.author.name | slice: 0 }}
+      </div>
+      {% endif %}
+      <h1>{{ site.author.name }}</h1>
+      <p class="tagline">{{ site.description }}</p>
+      <p class="institution">
+        {% if site.institution_url %}
+        <a href="{{ site.institution_url }}" target="_blank">{{ site.institution }}</a>
+        {% else %}
+        {{ site.institution }}
+        {% endif %}
+        {% if site.advisor %}
+        <br>Advised by 
+        {% if site.advisor_url %}
+        <a href="{{ site.advisor_url }}" target="_blank">{{ site.advisor }}</a>
+        {% else %}
+        {{ site.advisor }}
+        {% endif %}
+        {% endif %}
+      </p>
+      
+      <div class="social-links">
+        {% if site.author.github %}
+        <a href="https://github.com/{{ site.author.github }}" target="_blank" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        {% endif %}
+        {% if site.author.twitter %}
+        <a href="https://twitter.com/{{ site.author.twitter }}" target="_blank" title="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        {% endif %}
+        {% if site.author.linkedin %}
+        <a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        {% endif %}
+        {% if site.author.google_scholar %}
+        <a href="https://scholar.google.com/citations?user={{ site.author.google_scholar }}" target="_blank" title="Google Scholar">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+        {% endif %}
+        {% if site.author.email %}
+        <a href="mailto:{{ site.author.email }}" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <main>
+    {{ content }}
+    
+    {% if page.url == '/' %}
+    <!-- Projects Preview Section -->
+    <section id="projects-preview">
+      <h2><i class="fas fa-rocket"></i> Featured Projects</h2>
+      <div class="projects-preview-grid">
+        {% for project in site.projects limit:3 %}
+        <a href="{{ project.url }}" class="project-preview-card">
+          <div class="project-preview-icon">
+            {% if project.image %}
+            <img src="{{ project.image }}" alt="{{ project.title }}">
+            {% else %}
+            <i class="fas fa-project-diagram"></i>
+            {% endif %}
+          </div>
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+          <div class="project-preview-tags">
+            {% for tag in project.tags limit:2 %}
+            <span>{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="view-all-projects">
+        <a href="/projects/" class="btn-primary">
+          <i class="fas fa-arrow-right"></i> View All Projects
+        </a>
+      </div>
+    </section>
+    {% endif %}
+  </main>
+
+  <footer>
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author.name }}. All rights reserved.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Powered by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
+  </footer>
+</body>
+</html>
