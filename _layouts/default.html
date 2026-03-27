@@ -131,17 +131,18 @@
     }
 
     /* Sections */
-    section {
-      margin-bottom: 50px;
-    }
-
-    section h2 {
+    main > h2 {
       font-size: 20px;
       font-weight: 600;
       margin-bottom: 20px;
       padding-bottom: 10px;
       border-bottom: 2px solid var(--text-primary);
       display: inline-block;
+      margin-top: 50px;
+    }
+
+    main > h2:first-of-type {
+      margin-top: 0;
     }
 
     section h3 {
@@ -228,7 +229,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 15px;
+      margin: 15px 0 50px 0;
     }
 
     .topic-tag {
