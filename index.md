@@ -59,15 +59,15 @@ Dr. Dai is currently a research scientist at the [Institute for Artificial Intel
     <div class="pub-entry-authors">{{ pub.authors }}</div>
     <div class="pub-entry-venue">{{ pub.venue }}</div>
     <div class="pub-entry-links">
-      {% if pub.pdf %}[<u>PDF</u>]({{ pub.pdf }}){% endif %}
-      {% if pub.arxiv %}[<u>arXiv</u>]({{ pub.arxiv }}){% endif %}
-      {% if pub.code %}[<u>Code</u>]({{ pub.code }}){% endif %}
-      {% if pub.dataset %}[<u>Dataset</u>]({{ pub.dataset }}){% endif %}
-      {% if pub.project %}[<u>Project</u>]({{ pub.project }}){% endif %}
-      {% if pub.video %}[<u>Video</u>]({{ pub.video }}){% endif %}
-      {% if pub.poster %}[<u>Poster</u>]({{ pub.poster }}){% endif %}
-      {% if pub.slides %}[<u>Slides</u>]({{ pub.slides }}){% endif %}
-      {% if pub.doi %}[<u>DOI</u>]({{ pub.doi }}){% endif %}
+      {% if pub.pdf %}<a href="{{ pub.pdf }}" target="_blank">[<u>PDF</u>]</a>{% endif %}
+      {% if pub.arxiv %}<a href="{{ pub.arxiv }}" target="_blank">[<u>arXiv</u>]</a>{% endif %}
+      {% if pub.code %}<a href="{{ pub.code }}" target="_blank">[<u>Code</u>]</a>{% endif %}
+      {% if pub.dataset %}<a href="{{ pub.dataset }}" target="_blank">[<u>Dataset</u>]</a>{% endif %}
+      {% if pub.project %}<a href="{{ pub.project }}" target="_blank">[<u>Project</u>]</a>{% endif %}
+      {% if pub.video %}<a href="{{ pub.video }}" target="_blank">[<u>Video</u>]</a>{% endif %}
+      {% if pub.poster %}<a href="{{ pub.poster }}" target="_blank">[<u>Poster</u>]</a>{% endif %}
+      {% if pub.slides %}<a href="{{ pub.slides }}" target="_blank">[<u>Slides</u>]</a>{% endif %}
+      {% if pub.doi %}<a href="{{ pub.doi }}" target="_blank">[<u>DOI</u>]</a>{% endif %}
     </div>
   </div>
 </div>
