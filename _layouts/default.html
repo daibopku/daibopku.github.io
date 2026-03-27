@@ -193,6 +193,8 @@
 
     /* Publication Entry (for list page) */
     .pub-entry {
+      display: flex;
+      gap: 20px;
       margin-bottom: 30px;
       padding-bottom: 25px;
       border-bottom: 1px solid var(--border-color);
@@ -202,10 +204,47 @@
       border-bottom: none;
     }
 
+    /* Publication Thumbnail */
+    .pub-thumbnail {
+      flex-shrink: 0;
+      width: 180px;
+    }
+
+    .pub-thumbnail a {
+      display: block;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: box-shadow 0.2s;
+    }
+
+    .pub-thumbnail a:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .pub-thumbnail img,
+    .pub-thumbnail embed {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .pub-thumbnail embed {
+      border: none;
+    }
+
+    /* Publication Info */
+    .pub-info {
+      flex: 1;
+      min-width: 0;
+    }
+
     .pub-entry-title {
       font-size: 16px;
       font-weight: 600;
       margin-bottom: 6px;
+      line-height: 1.4;
     }
 
     .pub-entry-title a {
@@ -243,6 +282,18 @@
 
     .pub-entry-links a:last-child {
       margin-right: 0;
+    }
+
+    @media (max-width: 600px) {
+      .pub-entry {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .pub-thumbnail {
+        width: 100%;
+        max-width: 250px;
+      }
     }
 
     /* Topic Tags */

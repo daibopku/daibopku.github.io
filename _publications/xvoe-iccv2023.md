@@ -19,6 +19,9 @@ doi:
 # 支持图片格式 (png, jpg, gif) 或 PDF
 teaser: files/xvoe_explain.pdf
 
+# 首页列表显示的缩略图（建议 200-300px 宽度）
+thumbnail: files/xvoe_explain.pdf
+
 # BibTeX citation
 bibtex: |
   @inproceedings{dai2023xvoe,

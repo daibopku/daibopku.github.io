@@ -40,21 +40,35 @@ Dr. Dai is currently a research scientist at the [Institute for Artificial Intel
 {% assign sorted_pubs = site.publications | sort: 'date' | reverse %}
 {% for pub in sorted_pubs %}
 <div class="pub-entry">
-  <div class="pub-entry-title">
-    <a href="{{ pub.url | relative_url }}">{{ pub.title }}</a>
+  {% if pub.thumbnail %}
+  <div class="pub-thumbnail">
+    <a href="{{ pub.url | relative_url }}">
+      {% assign thumb_ext = pub.thumbnail | split: '.' | last | downcase %}
+      {% if thumb_ext == 'pdf' %}
+        <embed src="{{ pub.thumbnail | relative_url }}#toolbar=0&navpanes=0&page=1" type="application/pdf">
+      {% else %}
+        <img src="{{ pub.thumbnail | relative_url }}" alt="{{ pub.title }}">
+      {% endif %}
+    </a>
   </div>
-  <div class="pub-entry-authors">{{ pub.authors }}</div>
-  <div class="pub-entry-venue">{{ pub.venue }}</div>
-  <div class="pub-entry-links">
-    {% if pub.pdf %}[<u>PDF</u>]({{ pub.pdf }}){% endif %}
-    {% if pub.arxiv %}[<u>arXiv</u>]({{ pub.arxiv }}){% endif %}
-    {% if pub.code %}[<u>Code</u>]({{ pub.code }}){% endif %}
-    {% if pub.dataset %}[<u>Dataset</u>]({{ pub.dataset }}){% endif %}
-    {% if pub.project %}[<u>Project</u>]({{ pub.project }}){% endif %}
-    {% if pub.video %}[<u>Video</u>]({{ pub.video }}){% endif %}
-    {% if pub.poster %}[<u>Poster</u>]({{ pub.poster }}){% endif %}
-    {% if pub.slides %}[<u>Slides</u>]({{ pub.slides }}){% endif %}
-    {% if pub.doi %}[<u>DOI</u>]({{ pub.doi }}){% endif %}
+  {% endif %}
+  <div class="pub-info">
+    <div class="pub-entry-title">
+      <a href="{{ pub.url | relative_url }}">{{ pub.title }}</a>
+    </div>
+    <div class="pub-entry-authors">{{ pub.authors }}</div>
+    <div class="pub-entry-venue">{{ pub.venue }}</div>
+    <div class="pub-entry-links">
+      {% if pub.pdf %}[<u>PDF</u>]({{ pub.pdf }}){% endif %}
+      {% if pub.arxiv %}[<u>arXiv</u>]({{ pub.arxiv }}){% endif %}
+      {% if pub.code %}[<u>Code</u>]({{ pub.code }}){% endif %}
+      {% if pub.dataset %}[<u>Dataset</u>]({{ pub.dataset }}){% endif %}
+      {% if pub.project %}[<u>Project</u>]({{ pub.project }}){% endif %}
+      {% if pub.video %}[<u>Video</u>]({{ pub.video }}){% endif %}
+      {% if pub.poster %}[<u>Poster</u>]({{ pub.poster }}){% endif %}
+      {% if pub.slides %}[<u>Slides</u>]({{ pub.slides }}){% endif %}
+      {% if pub.doi %}[<u>DOI</u>]({{ pub.doi }}){% endif %}
+    </div>
   </div>
 </div>
 {% endfor %}
