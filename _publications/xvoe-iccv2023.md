@@ -17,8 +17,7 @@ doi:
 
 # Teaser image/PDF (论文概念图/第一张图)
 # 支持图片格式 (png, jpg, gif) 或 PDF
-teaser: https://raw.githubusercontent.com/daibopku/X-VoE/main/assets/teaser.png
-# teaser: https://arxiv.org/pdf/2308.10441.pdf  # 也可以用 PDF
+teaser: files/xvoe_explain.pdf
 
 # BibTeX citation
 bibtex: |
