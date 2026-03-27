@@ -6,42 +6,29 @@ title: Bo Dai
 <section id="biography">
 ## Biography
 
-<!-- 请在这里添加你的简介 -->
-<!-- 示例格式：
-Dr. Bo Dai received a Ph.D. degree ('21) from Peking University advised by [Prof. XXX](链接).
-His/Her research focuses on XXX.
-Dr. Dai works at [Institution Name](链接), working on XXX.
+Dr. Bo Dai received his B.S. and Ph.D. degrees in Physics from Peking University. He later transitioned to artificial intelligence as a postdoctoral researcher at the [School of Intelligence Science and Technology](http://www.cis.pku.edu.cn/), Peking University, advised by [Prof. Song-Chun Zhu](http://www.stat.ucla.edu/~sczhu/).
 
-[<u>CV</u>](链接) [<u>Dissertation</u>](链接)
--->
+His research bridges cognitive science and artificial intelligence, focusing on two main directions: (1) building machines that can learn abstract representations, causal relations, and physical commonsense directly from physical environments through the lens of intuitive physics, and (2) evaluating multimodal large language model-based embodied agents in high-dimensional semantic action spaces by constructing comprehensive test scenarios.
 
-<!-- 示例（来自yzhu.io）：
-Dr. Yixin Zhu received a Ph.D. degree ('18) from UCLA advised by Prof. Song-Chun Zhu.
-His research builds interactive AI by integrating high-level common sense (functionality, affordance, physics, causality, intent) with raw sensory inputs (pixels and haptic signals) to enable richer representation and cognitive reasoning on objects, scenes, shapes, numbers, and agents.
-Dr. Zhu directs the PKU CoRe Lab, working on abstract reasoning, visually grounded reasoning, and interactive reasoning.
+Dr. Dai is currently a research scientist at the [Institute for Artificial Intelligence, Peking University](https://www.bigai.ai/) (Beijing Institute for General Artificial Intelligence, BIGAI), where he leads the embodied general AI testing initiatives at the General Agent Center.
 
-[<u>CV</u>](files/cv.pdf) [<u>Dissertation</u>](files/dissertation.pdf)
--->
-
-<p style="color: #999; font-style: italic;">（请编辑 index.md 添加你的个人简介）</p>
+<!-- 添加 CV 链接时请取消注释下行 -->
+<!-- [<u>CV</u>](files/cv.pdf) -->
 
 </section>
 
 <section id="topics">
 ## Topics
 
-<!-- 请在这里添加你的研究方向/主题 -->
-<!-- 使用 topic-tag 格式 -->
-
 <div class="topics">
-  <!-- 示例：
   <span class="topic-tag">Intuitive Physics</span>
+  <span class="topic-tag">Embodied AI</span>
   <span class="topic-tag">Cognitive Science</span>
-  <span class="topic-tag">Machine Learning</span>
-  -->
+  <span class="topic-tag">Physical Commonsense</span>
+  <span class="topic-tag">Causal Reasoning</span>
+  <span class="topic-tag">LLM Evaluation</span>
+  <span class="topic-tag">Multi-modal Learning</span>
 </div>
-
-<p style="color: #999; font-style: italic; margin-top: 15px;">（请编辑 index.md 添加研究主题）</p>
 
 </section>
 
@@ -59,7 +46,7 @@ Author One, <u>Bo Dai</u>, Author Three, Author Four
 ---
 -->
 
-<p style="color: #999; font-style: italic;">（请编辑 index.md 添加预印本论文）</p>
+<!-- <p style="color: #999; font-style: italic;">（暂无预印本论文）</p> -->
 
 </section>
 
@@ -89,6 +76,6 @@ Author One, <u>Bo Dai</u>, Author Three, Author Four
 </div>
 -->
 
-<p style="color: #999; font-style: italic;">（请编辑 index.md 添加已发表论文）</p>
+<!-- <p style="color: #999; font-style: italic;">（暂无已发表论文）</p> -->
 
 </section>
