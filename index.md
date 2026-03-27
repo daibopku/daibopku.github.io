@@ -4,6 +4,7 @@ title: Bo Dai
 ---
 
 <section id="biography">
+
 ## Biography
 
 Dr. Bo Dai received his B.S. and Ph.D. degrees in Physics from Peking University. He later transitioned to artificial intelligence as a postdoctoral researcher at the [School of Intelligence Science and Technology](http://www.cis.pku.edu.cn/), Peking University, advised by [Prof. Song-Chun Zhu](http://www.stat.ucla.edu/~sczhu/).
@@ -18,6 +19,7 @@ Dr. Dai is currently a research scientist at the [Institute for Artificial Intel
 </section>
 
 <section id="topics">
+
 ## Topics
 
 <div class="topics">
@@ -33,10 +35,10 @@ Dr. Dai is currently a research scientist at the [Institute for Artificial Intel
 </section>
 
 <section id="preprints">
+
 ## Pre-Print
 
-<!-- 请在这里添加预印本论文 -->
-<!-- 格式：标题 + 作者 + 链接 -->
+<!-- 在这里添加预印本论文 -->
 
 <!-- 示例：
 **Paper Title: Subtitle**
@@ -46,15 +48,13 @@ Author One, <u>Bo Dai</u>, Author Three, Author Four
 ---
 -->
 
-<!-- <p style="color: #999; font-style: italic;">（暂无预印本论文）</p> -->
-
 </section>
 
 <section id="publications">
+
 ## Selected Publications
 
-<!-- 请在这里添加已发表论文 -->
-<!-- 使用 pub-item 格式 -->
+<!-- 在这里添加已发表论文 -->
 
 <!-- 示例：
 <div class="pub-item">
@@ -65,17 +65,6 @@ Author One, <u>Bo Dai</u>, Author Three, Author Four
     [<u>PDF</u>](链接) [<u>DOI</u>](https://doi.org/xxx) [<u>Code</u>](链接)
   </div>
 </div>
-
-<div class="pub-item">
-  <div class="pub-title">Population dynamics of molecular nitrogen initiated by intense femtosecond laser pulses</div>
-  <div class="pub-authors">Peng Wang, Chengyin Wu, Mingwei Lei, <strong>Bo Dai</strong>, Hong Yang, Hongbing Jiang, and Qihuang Gong</div>
-  <div class="pub-venue">Physical Review A, 92, 063412 (2015)</div>
-  <div class="pub-links">
-    [<u>DOI</u>](https://doi.org/xxx)
-  </div>
-</div>
 -->
-
-<!-- <p style="color: #999; font-style: italic;">（暂无已发表论文）</p> -->
 
 </section>
