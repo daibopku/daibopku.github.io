@@ -15,11 +15,11 @@ poster:
 slides: 
 doi: 
 
-# Teaser image
-teaser: /publications/files/domain_adapt_mllm_teaser.png
+# Teaser image (第一张图 Fig.1)
+teaser: /publications/files/domain_adapt_mllm_fig1.png
 
 # 首页列表显示的缩略图
-thumbnail: /publications/files/domain_adapt_mllm_teaser.png
+thumbnail: /publications/files/domain_adapt_mllm_fig1.png
 
 # BibTeX citation
 bibtex: |
