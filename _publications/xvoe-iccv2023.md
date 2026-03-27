@@ -11,10 +11,14 @@ code: https://github.com/daibopku/X-VoE
 dataset: https://huggingface.co/datasets/RuriSama/X-VoE/tree/main
 project: https://sites.google.com/view/x-voe
 video: https://vimeo.com/855745233
+poster: 
 slides: 
 doi: 
 
-# BibTeX citation (会在弹窗中显示)
+# Teaser image (论文概念图/第一张图)
+teaser: https://raw.githubusercontent.com/daibopku/X-VoE/main/assets/teaser.png
+
+# BibTeX citation
 bibtex: |
   @inproceedings{dai2023xvoe,
     title={X-VoE: Measuring eXplanatory Violation of Expectation in Physical Events},
@@ -22,9 +26,6 @@ bibtex: |
     booktitle={ICCV},
     year={2023}
   }
-
-# Teaser image (可选)
-teaser: 
 ---
 
 ## Abstract

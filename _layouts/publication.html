@@ -192,15 +192,23 @@
 
     /* Teaser Image */
     .pub-teaser {
-      margin: 30px 0;
+      margin: 30px 0 40px 0;
+      text-align: center;
     }
 
     .pub-teaser img {
       width: 100%;
-      max-height: 400px;
-      object-fit: cover;
+      max-width: 100%;
+      height: auto;
       border-radius: 4px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+
+    .pub-teaser-caption {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-style: italic;
     }
 
     /* Related Papers */
@@ -494,6 +502,9 @@
     {% if page.teaser %}
     <div class="pub-teaser">
       <img src="{{ page.teaser | relative_url }}" alt="{{ page.title }}">
+      {% if page.teaser_caption %}
+      <div class="pub-teaser-caption">{{ page.teaser_caption }}</div>
+      {% endif %}
     </div>
     {% endif %}
 
