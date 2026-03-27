@@ -222,20 +222,16 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    .pub-thumbnail img {
+    .pub-thumbnail img,
+    .pub-thumbnail iframe {
       width: 100%;
       height: 120px;
       object-fit: cover;
       display: block;
+      border: none;
     }
 
-    .pub-thumbnail embed {
-      width: 100%;
-      height: 130px;
-      object-fit: cover;
-      object-position: top;
-      display: block;
-      border: none;
+    .pub-thumbnail iframe {
       overflow: hidden;
     }
 

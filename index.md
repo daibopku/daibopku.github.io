@@ -45,7 +45,7 @@ Dr. Dai is currently a research scientist at the [Institute for Artificial Intel
     <a href="{{ pub.url | relative_url }}">
       {% assign thumb_ext = pub.thumbnail | split: '.' | last | downcase %}
       {% if thumb_ext == 'pdf' %}
-        <embed src="{{ pub.thumbnail | relative_url }}#toolbar=0&navpanes=0&page=1" type="application/pdf">
+        <iframe src="{{ pub.thumbnail | relative_url }}#toolbar=0&navpanes=0&page=1&zoom=fit" frameborder="0" scrolling="no"></iframe>
       {% else %}
         <img src="{{ pub.thumbnail | relative_url }}" alt="{{ pub.title }}">
       {% endif %}
