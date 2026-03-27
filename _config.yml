@@ -15,7 +15,7 @@ author:
   google_scholar: 
 
 # Personal info
-avatar: # URL to your profile photo
+avatar: "images/avatar.jpg"  # Path to your profile photo
 institution: "Beijing Institute for General Artificial Intelligence (BIGAI)"
 institution_url: "https://www.bigai.ai/"
 advisor: "Prof. Song-Chun Zhu"
