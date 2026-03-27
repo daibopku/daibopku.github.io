@@ -3,9 +3,8 @@ layout: default
 title: Bo Dai
 ---
 
-<section id="biography">
-
 ## Biography
+{:#biography}
 
 Dr. Bo Dai received his B.S. and Ph.D. degrees in Physics from Peking University. He later transitioned to artificial intelligence as a postdoctoral researcher at the [School of Intelligence Science and Technology](http://www.cis.pku.edu.cn/), Peking University, advised by [Prof. Song-Chun Zhu](http://www.stat.ucla.edu/~sczhu/).
 
@@ -16,11 +15,10 @@ Dr. Dai is currently a research scientist at the [Institute for Artificial Intel
 <!-- 添加 CV 链接时请取消注释下行 -->
 <!-- [<u>CV</u>](files/cv.pdf) -->
 
-</section>
-
-<section id="topics">
+---
 
 ## Topics
+{:#topics}
 
 <div class="topics">
   <span class="topic-tag">Intuitive Physics</span>
@@ -32,11 +30,10 @@ Dr. Dai is currently a research scientist at the [Institute for Artificial Intel
   <span class="topic-tag">Multi-modal Learning</span>
 </div>
 
-</section>
-
-<section id="preprints">
+---
 
 ## Pre-Print
+{:#preprints}
 
 <!-- 在这里添加预印本论文 -->
 
@@ -48,11 +45,10 @@ Author One, <u>Bo Dai</u>, Author Three, Author Four
 ---
 -->
 
-</section>
-
-<section id="publications">
+---
 
 ## Selected Publications
+{:#publications}
 
 <!-- 在这里添加已发表论文 -->
 
@@ -66,5 +62,3 @@ Author One, <u>Bo Dai</u>, Author Three, Author Four
   </div>
 </div>
 -->
-
-</section>
